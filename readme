@@ -1,0 +1,11 @@
+Configure DB:
+
+Mysql database is used for storing data.
+Configure username and password in application.properties file of your mysql connector.
+Create a schema named "nomitri" in the database.
+Run the application and execute the insert queries present in src/main/resources/data.sql file.
+
+
+Improvements that could be added for the future:
+Soft delete would be a better option so that previous order history could be shown to the customer.
+Spring security could be implemented to authorise the API access.
