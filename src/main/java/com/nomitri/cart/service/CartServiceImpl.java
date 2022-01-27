@@ -8,6 +8,7 @@ import com.nomitri.cart.exception.ConstraintsViolationException;
 import com.nomitri.cart.exception.EntityNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -34,6 +35,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
+    @Transactional
     public CartDO updateCart(long cartId, long productId) throws EntityNotFoundException {
 
         if (getCart(cartId) != null) {

@@ -24,7 +24,7 @@ public class CartDO {
     @NotNull(message = "username can not be null!")
     private String userName;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "cart_product",
             joinColumns = @JoinColumn(name = "cart_id"),

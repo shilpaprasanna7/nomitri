@@ -2,6 +2,7 @@ package com.nomitri.cart.domainobject;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,7 +27,7 @@ public class ProductDO {
     private Double price;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "products", fetch = FetchType.LAZY)
     Set<CartDO> cart;
 
     public ProductDO(String product_name, Double price) {
