@@ -61,7 +61,7 @@ public class CartController {
         return false;
     }
 
-    @GetMapping("/getCartByUserName/{userName}")
+    @GetMapping("/{userName}")
     public ResponseEntity<CartDTO> getCartByUserName(@PathVariable String userName) throws EntityNotFoundException {
 
         CartDO cartDO = cartService.getCartByUserName(userName);
